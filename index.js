@@ -22,7 +22,7 @@ const showMastGoOn = (async ()=> {
     //цикл в котором поднимаются все боты из папки ботс
     const fNames = await fs.readdir('./bots');
     fNames.forEach(f => botGenerator(f));
-})
+})()
 
 
 const father = tBot(process.env.TELEGRAM_BOT_TOKEN || '6054095011:AAHXC6GpXZeoZP5SJP-RS022QPTuL7_MJ7s'); // t.me/botsgenerator_genabot
