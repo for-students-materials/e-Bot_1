@@ -19,6 +19,7 @@
   "homepage": "https://github.com/keha12345/e-Bot_1#readme",
   "dependencies": {
     "auto-roots": "^1.1.2",
+    "axios": "^1.4.0",
     "koa": "^2.14.2"
   }
 }

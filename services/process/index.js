@@ -13,7 +13,7 @@ function check(){
 
 module.exports = {
 
-    calling: ({ears_andmouth, tme, botFileName}) => async (ctx) => {
+    calling: ({ears_and_mouth, fileName, file}) => async (ctx) => {
         // тут нам надо понять кто звонит в каком боте и для этого юзера в зависимости  от типа звонка продолжить процесс общения
     } 
 }
