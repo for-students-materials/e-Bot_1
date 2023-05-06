@@ -1,7 +1,6 @@
 require('dotenv').config();
+const fs = require('fs/promises');
 const path = require('path');
-const db = require('./db/models');
-const fs = require('fs');
 const tBot = require('./services/t-bot');
 const ears_and_mouth = require('./services/ears_and_mouth');
 const process = require('./services/process');
@@ -17,6 +16,7 @@ async function botGenerator(file){
 
 const showMastGoOn = (async ()=> {
     //цикл в котором поднимаются все боты из папки ботс
+    const fNames = []
 })
 
 
