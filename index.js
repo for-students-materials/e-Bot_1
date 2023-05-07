@@ -7,14 +7,14 @@ const ears_and_mouth = require('./services/ears_and_mouth');
 const process = require('./services/process');
 
 
-async function botGenerator(file){
+async function botGenerator(fileName){
     // что бы бот зарабоk
     // прочли файл получи пропсы бота
     // подняли экземпляр бота 
-    // вызвали для экземпляра функцию listen(process.calling({ears_andmouth, tme, botFileName}))
-    const [ botParamsJson, ...fileText] = (await fs.readFile(file, 'utf-8')).replace('\n\n','\n').split('\n');
-    const {app} = tBot(JSON.stringify(botParamsJson));
-    app.listen(process.calling({ears_and_mouth, fileName: file, file: fileText}))
+    // вызвали для экземпляра функцию listen(process.calling({ears_andmouth, chatID, botFileName}))
+    const [ botParamsJson, ...file] = (await fs.readFile(fileName, 'utf-8')).replace('\n\n','\n').split('\n');
+    const {app} = tBot({...JSON.stringify(botParamsJson), file});
+    app.listen(process.calling({convert: ears_and_mouth.convert, file, fileName}))
 
 }
 
@@ -24,8 +24,8 @@ const showMastGoOn = (async ()=> {
     fNames.forEach(f => botGenerator(f));
 })()
 
-
-const father = tBot(process.env.TELEGRAM_BOT_TOKEN || '6054095011:AAHXC6GpXZeoZP5SJP-RS022QPTuL7_MJ7s'); // t.me/botsgenerator_genabot
+// t.me/botsgenerator_genabot
+const father = tBot({ token: process.env.TELEGRAM_BOT_TOKEN || '6054095011:AAHXC6GpXZeoZP5SJP-RS022QPTuL7_MJ7s', creator: true}); 
 father.listen(async (ctx) => { // bot.on('document', async (ctx) => {
     // наверно надо как то это защитить
     // добавь файл из контехста в папку ботс и вызови функцию создания нового бота

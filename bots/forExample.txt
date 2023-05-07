@@ -1,8 +1,8 @@
 {conection data json}
 #First metting
-text> Hello? listen this conversation.
-adio> Mr. Dg...
-text> Try to say - ztoto
-<audio hello
+text>> Hello! listen this conversation.
+voice>> Mr. Dg...
+text>> Try to say - ztoto
+voice<< hello
 #second lesson
 ...
